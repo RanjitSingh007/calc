@@ -24,7 +24,7 @@ Then the system would say the months are invalid and assuming to be 1 (Janurary)
 1. The calc() method does not account for a wrong date in any months. Putting in a day which exceeds the day cap for that months will cause it to calculate the in between days based on the inputted date (Ex: input 31 for April or 30 for February will cause the calculation to be based on the inputted date, not capped date). **This was not found by the test case**. If given this input:<br>
 <code>int days = Cal.cal(1,31,2,31,2017)</code><br>
 should give days as 28 days or invalid input, but instead gives 31 days.
-2. 
+2. The fault created is after removing "=" sign from the <code>for</code> loop of <code>cal()</code>. This will cause incorrect incorrect calculation of days. <code>calSixMonthsTest()</code> <code>calLeapYearTest()</code>, and <code>calYearTest()</code> test cases will reach this fault and fails. Therefore, these three test cases will find this fault.
 
 
 # Test Case Description
