@@ -21,7 +21,7 @@ Then the system would say the months are invalid and assuming to be 1 (Janurary)
 2. The month of February allows inputted date to be up to 31 when it should have max 29 (for leap year) or 28 (for normal years)
 
 # With Calc
-1. The calc() method does not account for a wrong date in February, where February suppose to only take max 28th (for non-leap year) or 29th (for leap year). However, inputting 31st for the date in February will calculate the days between months based on 2/31, not 2/28 or 2/29. **This was not found by the test case**. If given this input:<br>
+1. The calc() method does not account for a wrong date in any months. Putting in a day which exceeds the day cap for that months will cause it to calculate the in between days based on the inputted date (Ex: input 31 for April or 30 for February will cause the calculation to be based on the inputted date, not capped date). **This was not found by the test case**. If given this input:<br>
 <code>int days = Cal.cal(1,31,2,31,2017)</code><br>
 should give days as 28 days or invalid input, but instead gives 31 days.
 2. 
